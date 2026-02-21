@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday MERII BACHIII ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffd6e0, #ffe9f3);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  color: #ff4f81;
+  margin-top: 40px;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  background: #ff4f81;
+  color: white;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff2e6a;
+}
+
+.gallery img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 20px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+.heart {
+  position: fixed;
+  top: -10px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(100vh); }
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="section">
+<h1>Happy Birthday Babee 💖</h1>
+<p>You make world softer and brighter just by existing😘😘😘😘.</p>
+</div>
+
+<div class="section">
+<h2>Countdown to 22 February 🎂</h2>
+<p id="timer" style="font-size:20px;"></p>
+</div>
+
+<div class="section">
+<h2>Ek cheez jan na chahogi ?😌</h2>
+<button onclick="showJoke()">Click Me</button>
+<p id="joke"></p>
+</div>
+
+<div class="section gallery">
+<h2>Our Sweet Memories 📸</h2>
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+</div>
+
+<div class="section">
+<h2>Secret Button 🤫</h2>
+<button onclick="showSecret()">Do Not Click</button>
+<p id="secret"></p>
+</div>
+
+<script>
+var birthday = new Date("February 22, 2026 00:00:00").getTime();
+
+setInterval(function() {
+  var now = new Date().getTime();
+  var distance = birthday - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("timer").innerHTML =
+  days + " days " + hours + " hours " + minutes + " minutes 💕";
+}, 1000);
+
+function showJoke() {
+  document.getElementById("joke").innerHTML =
+  "I LOVEEEE YOUUU MOREEEEE💖💖💖💖💖 smjhi???????tamper luj kru ??😂😂🤣🤣";
+}
+
+function showSecret() {
+  document.getElementById("secret").innerHTML =
+  "A girl jo class 5th mein ayi thi confused and hesistant kher usko to dekh ki hi dil de diya cuz uk some heart snatchers💗💗, well u did an excellent job stealing my heart❤️❤️fir aye hum log rs mein and it was the best descision....dheere dheere i started getting you and saath hi saath you healed my broken part...we cant forget a part of your teasing😂😂 but fir bhi babe thanks for accepting this weirdo's rs🫂🫂💗💗💗💗 and i LOVEEEEEEEEEEEE YOUUUUUUUUUUU MOREEEEEEEEEEEEEEE🫂🫂💗💗💗💗     ";
+}
+
+setInterval(function(){
+  var heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+  document.body.appendChild(heart);
+  setTimeout(function(){ heart.remove(); }, 5000);
+}, 300);
+</script>
+
+</body>
+</html>
